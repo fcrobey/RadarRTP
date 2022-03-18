@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RadarRTP", "RadarRTP\RadarRTP.vcxproj", "{ACB3813D-3827-4C07-A9B6-613C81DE47CE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "inilib", "inilib\inilib.vcxproj", "{813D967A-C4F9-43CD-A765-8A00FA9C8A4B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Linux|x64 = Linux|x64
+		Linux|x86 = Linux|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ACB3813D-3827-4C07-A9B6-613C81DE47CE}.Debug|x64.ActiveCfg = Debug|x64
+		{ACB3813D-3827-4C07-A9B6-613C81DE47CE}.Debug|x64.Build.0 = Debug|x64
+		{ACB3813D-3827-4C07-A9B6-613C81DE47CE}.Debug|x86.ActiveCfg = Debug|Win32
+		{ACB3813D-3827-4C07-A9B6-613C81DE47CE}.Debug|x86.Build.0 = Debug|Win32
+		{ACB3813D-3827-4C07-A9B6-613C81DE47CE}.Linux|x64.ActiveCfg = Linux|x64
+		{ACB3813D-3827-4C07-A9B6-613C81DE47CE}.Linux|x64.Build.0 = Linux|x64
+		{ACB3813D-3827-4C07-A9B6-613C81DE47CE}.Linux|x86.ActiveCfg = Release|x64
+		{ACB3813D-3827-4C07-A9B6-613C81DE47CE}.Release|x64.ActiveCfg = Release|x64
+		{ACB3813D-3827-4C07-A9B6-613C81DE47CE}.Release|x64.Build.0 = Release|x64
+		{ACB3813D-3827-4C07-A9B6-613C81DE47CE}.Release|x86.ActiveCfg = Release|Win32
+		{ACB3813D-3827-4C07-A9B6-613C81DE47CE}.Release|x86.Build.0 = Release|Win32
+		{813D967A-C4F9-43CD-A765-8A00FA9C8A4B}.Debug|x64.ActiveCfg = Debug|x64
+		{813D967A-C4F9-43CD-A765-8A00FA9C8A4B}.Debug|x64.Build.0 = Debug|x64
+		{813D967A-C4F9-43CD-A765-8A00FA9C8A4B}.Debug|x86.ActiveCfg = Debug|Win32
+		{813D967A-C4F9-43CD-A765-8A00FA9C8A4B}.Debug|x86.Build.0 = Debug|Win32
+		{813D967A-C4F9-43CD-A765-8A00FA9C8A4B}.Linux|x64.ActiveCfg = Linux|x64
+		{813D967A-C4F9-43CD-A765-8A00FA9C8A4B}.Linux|x64.Build.0 = Linux|x64
+		{813D967A-C4F9-43CD-A765-8A00FA9C8A4B}.Linux|x86.ActiveCfg = Linux|Win32
+		{813D967A-C4F9-43CD-A765-8A00FA9C8A4B}.Linux|x86.Build.0 = Linux|Win32
+		{813D967A-C4F9-43CD-A765-8A00FA9C8A4B}.Release|x64.ActiveCfg = Release|x64
+		{813D967A-C4F9-43CD-A765-8A00FA9C8A4B}.Release|x64.Build.0 = Release|x64
+		{813D967A-C4F9-43CD-A765-8A00FA9C8A4B}.Release|x86.ActiveCfg = Release|Win32
+		{813D967A-C4F9-43CD-A765-8A00FA9C8A4B}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C1575A9F-5189-4DD4-833C-805B3B1EE632}
+	EndGlobalSection
+EndGlobal
