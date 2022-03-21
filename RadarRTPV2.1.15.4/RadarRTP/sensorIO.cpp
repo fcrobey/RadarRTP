@@ -339,17 +339,22 @@ int init_ADC_data()
 			}
 #else // WIN32, but not being built with ASIO
 			mypaAudioHostAPI = paMME;
-			Desired_Rx_Device = Pa_GetHostApiInfo(myPaHostIDX)->defaultInputDevice;
+			//Desired_Rx_Device = FindDevice(NChan, gRadarConfig.SampleRate, &InputParameters, NULL, mypaAudioHostAPI);
+			
 			myPaHostIDX = Pa_HostApiTypeIdToHostApiIndex(mypaAudioHostAPI);
-			Desired_Tx_Device = Pa_GetHostApiInfo(myPaHostIDX)->defaultOutputDevice;
+			//Desired_Rx_Device = Pa_GetHostApiInfo(myPaHostIDX)->defaultInputDevice;
+			//Desired_Tx_Device = Pa_GetHostApiInfo(myPaHostIDX)->defaultOutputDevice;
 #endif
 #else // For Linux
 			mypaAudioHostAPI = paALSA;
 			//	mypaAudioHostAPI = paJACK;
+			myPaHostIDX = Pa_HostApiTypeIdToHostApiIndex(mypaAudioHostAPI);
+			//Desired_Rx_Device = Pa_GetHostApiInfo(myPaHostIDX)->defaultInputDevice;
+			//Desired_Tx_Device = Pa_GetHostApiInfo(myPaHostIDX)->defaultOutputDevice;
 #endif
 			}
 
-		log_message("Will try to open stream with in %d, out %d", Desired_Rx_Device, Desired_Tx_Device);
+		
 		
 		if (Desired_Rx_Device < 0) { // Try to find a device meeting goals
 			if (NChan > 2) NChan = 2;
@@ -362,8 +367,13 @@ int init_ADC_data()
 				return(-1);
 			}
 		}
-		
+		//Output
+		if (Desired_Tx_Device < 0) {
+			if (myPaHostIDX < 0) myPaHostIDX = Pa_HostApiTypeIdToHostApiIndex(mypaAudioHostAPI);
+			Desired_Tx_Device = Pa_GetHostApiInfo(myPaHostIDX)->defaultOutputDevice;
+		}
 
+		log_message("Will try to open stream with in %d, out %d", Desired_Rx_Device, Desired_Tx_Device);
 		//Input
 		InputParameters.channelCount = NChan;
 		gRadarState.NumADCChans = NChan;
@@ -373,11 +383,7 @@ int init_ADC_data()
 		InputParameters.hostApiSpecificStreamInfo = NULL; //&AsioInputInfo;
 		InputParameters.sampleFormat = paFloat32;
 		
-		//Output
-		if (Desired_Tx_Device < 0)		{
-			if (myPaHostIDX < 0) myPaHostIDX = Pa_HostApiTypeIdToHostApiIndex(mypaAudioHostAPI);
-			Desired_Tx_Device = Pa_GetHostApiInfo(myPaHostIDX)->defaultOutputDevice;
-		}
+		
 
 		OutputParameters.device = Desired_Tx_Device;
 		OutputParameters.channelCount = NUMOUTCHAN;
